@@ -11,6 +11,6 @@ torch
 google-api-python-client
 tqdm
 sentence-transformers
-langchain u-community
+langchain_community
 scikit-learn
 google-generativeai==0.3.2
