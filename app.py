@@ -17,10 +17,6 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 # Set Gemini API Key
 os.environ["GOOGLE_API_KEY"] = "AIzaSyBmUYQdImYbjPJesYFoMHVEfibp5l1CKBc"  # Replace with your Gemini API key
 
-llm = ChatGoogleGenerativeAI(
-    model="gemini-1.5-flash",  # No need for "models/" prefix
-    temperature=0.3
-)
 
 # Initialize vector database and create if not exists
 def initialize_vector_db():
@@ -66,7 +62,7 @@ def initialize_vector_db():
 def initialize_rag():
     vector_store, embeddings = initialize_vector_db()
     retriever = vector_store.as_retriever()
-    llm = ChatGoogleGenerativeAI(model="models/gemini-1.5-flash", temperature=0.3)
+   
     
     qa_chain = RetrievalQA.from_chain_type(
         llm=llm,
