@@ -62,7 +62,7 @@ def initialize_vector_db():
 def initialize_rag():
     vector_store, embeddings = initialize_vector_db()
     retriever = vector_store.as_retriever()
-   
+    llm = ChatGoogleGenerativeAI(model="models/gemini-1.5-flash", temperature=0.3)
     
     qa_chain = RetrievalQA.from_chain_type(
         llm=llm,
