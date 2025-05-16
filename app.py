@@ -11,9 +11,16 @@ from langchain.document_loaders import TextLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_google_genai import ChatGoogleGenerativeAI
+
 
 # Set Gemini API Key
 os.environ["GOOGLE_API_KEY"] = "AIzaSyBmUYQdImYbjPJesYFoMHVEfibp5l1CKBc"  # Replace with your Gemini API key
+
+llm = ChatGoogleGenerativeAI(
+    model="gemini-1.5-flash",  # No need for "models/" prefix
+    temperature=0.3
+)
 
 # Initialize vector database and create if not exists
 def initialize_vector_db():
