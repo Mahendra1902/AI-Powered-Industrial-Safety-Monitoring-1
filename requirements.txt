@@ -14,3 +14,4 @@ sentence-transformers
 langchain_community
 scikit-learn
 google-generativeai==0.3.2
+langchain_core
