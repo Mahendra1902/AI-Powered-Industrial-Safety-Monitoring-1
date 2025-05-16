@@ -11,4 +11,4 @@ torch
 google-api-python-client
 tqdm
 sentence-transformers
-langchain community
+langchain u-community
